@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexible visual systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,300&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif ;
+        }
+        
+        :root{
+            --primary-size-modul: 100px;
+            --secondary-size-modul: calc(var(--primary-size-modul)/2);
+        
+        }
+
+        .inter-header{
+            font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+        }
+
+        h1, h2{
+            color: white;
+            margin: 10px 0 0 10px;
+
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+        #uno{
+            width: 50%;
+            flex-grow: 1;
+            background-color: blue;
+
+        }
+        header{
+            padding: 20px 0 0 20px;
+            width: 100%;
+            height: 50%;
+            background-color: blue;
+        }
+        main{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            background-color: blue;
+        }
+        main section{
+            padding: 20px 0 0 20px;
+            width: 50%;
+            height: 50%;
+        }
+        #dos{
+            width: 50%;
+            flex-grow: 1;
+        }
+        .top, .bottom, .left, .right{
+            background-color: black;
+        }
+        #mXL{
+            position: relative;
+            width: 100%;
+            height: 50%;
+            background-color: white;
+        }
+        #mXL .top{
+            position: absolute;
+            top: 0;
+            left: var(--primary-size-modul);
+            right: var(--primary-size-modul);
+            height: var(--primary-size-modul);
+
+        }
+        #mXL .bottom{
+            position: absolute;
+            bottom: 0;
+            left: var(--primary-size-modul);
+            right: var(--primary-size-modul);
+            height: var(--primary-size-modul);
+
+        }
+        #mXL .right{
+            position: absolute;
+            width: var(--primary-size-modul);
+            top: var(--primary-size-modul);
+            bottom: var(--primary-size-modul);
+            right: 0;
+        }
+        #mXL .left{
+            position: absolute;
+            width: var(--primary-size-modul);
+            top: var(--primary-size-modul);
+            bottom: var(--primary-size-modul);
+            left: 0;
+        }
+        #m{
+            width: 100%;
+            height: 50%;
+            background-color: white;
+        }
+        #mL{
+            position: relative;
+            width: 100%;
+            height: 50%;
+        }
+        #mL .top{
+            position: absolute;
+            top: 0;
+            left: var(--primary-size-modul);
+            right: var(--primary-size-modul);
+            height: var(--secondary-size-modul);
+        }
+        #mL .bottom{
+            position: absolute;
+            bottom: 0;
+            left: var(--primary-size-modul);
+            right: var(--primary-size-modul);
+            height: var(--secondary-size-modul);
+        }
+        #mL .right{
+            position: absolute;
+            width: var(--primary-size-modul);
+            top: var(--secondary-size-modul);
+            bottom: var(--secondary-size-modul);
+            right: 0;
+        }
+        #mL .left{
+            position: absolute;
+            width: var(--primary-size-modul);
+            top: var(--secondary-size-modul);
+            bottom: var(--secondary-size-modul);
+            left: 0;
+        }
+        #mS{
+            width: 100% ;
+            height: 50%;
+            display: flex;
+        }
+        .mXS{
+            position: relative;
+            width: 50%;
+            height: 100%;
+        }
+        .mXS .top{
+            position: absolute;
+            top: 0;
+            right: var(--secondary-size-modul);
+            left: var(--secondary-size-modul);
+            height: var(--secondary-size-modul);
+        }
+        .mXS .bottom{
+            position: absolute;
+            bottom: 0;
+            right: var(--secondary-size-modul);
+            left: var(--secondary-size-modul);
+            height: var(--secondary-size-modul);
+        }
+        .mXS .right{
+            position: absolute;
+            right: 0;
+            top: var(--secondary-size-modul);
+            bottom: var(--secondary-size-modul);
+            width: var(--secondary-size-modul);
+        }
+        .mXS .left{
+            position: absolute;
+            left: 0;
+            top: var(--secondary-size-modul);
+            bottom: var(--secondary-size-modul);
+            width: var(--secondary-size-modul);
+        }
+        @media (min-width: 1024px) and (max-width: 489px) {
+            :root{
+               --primary-size-modul: 100px;
+            }   
+            #uno{
+                background-color: aqua;
+            }
+            .inter-header{
+                font-size: 2.6em;
+            }
+            .container{
+                flex-direction: column;
+                height: 200vh;
+            }
+            #uno,
+            #dos{
+                width: 100%;
+                flex-grow: 1;
+            }
+        }
+        @media (max-width: 480px){
+            :root{
+                --primary-size-modul: 50px;
+            }
+            .container{
+                flex-direction: column;
+                height: 200vh;
+            }
+            .inter-header{
+                font-size: 1.5em;
+            }
+            #uno{
+                width: 100%;
+                flex-grow: 1;
+            }
+            #dos{
+                width: 100%;
+                flex-grow: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="uno">
+            <header>
+                <h1>FLEXIBLE SYSTEMS</h1>
+            </header>
+            <main>
+                <section>
+                    <h2>ML</h2>
+                </section>
+                <section>
+                    <h2>BCN</h2>
+                    <h2>HH</h2>
+                </section>
+            </main>
+        </div>
+        <div id="dos">
+            <div id="mXL">
+                <div class="top"></div>
+                <div class="right"></div>
+                <div class="left"></div>
+                <div class="bottom"></div>
+            </div>
+            <div id="m">
+                <div id="mL">
+                    <div class="top"></div>
+                    <div class="right"></div>
+                    <div class="left"></div>
+                    <div class="bottom"></div>
+                </div>
+                <div id="mS">
+                    <div class="mXS">
+                        <div class="top"></div>
+                        <div class="right"></div>
+                        <div class="left"></div>
+                        <div class="bottom"></div>
+                    </div>
+                    <div class="mXS">
+                        <div class="top"></div>
+                        <div class="right"></div>
+                        <div class="left"></div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
